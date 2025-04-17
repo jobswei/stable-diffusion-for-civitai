@@ -15,4 +15,24 @@ stable diffusion 是广为人知的ai图像生成项目。它发布有[webui版�
 * 官网的模型文件以`.ckpt`结尾
 * 如有其他来源的模型文件，可以分别尝试两个扩展名。其实问题的本质就在于对于不同扩展名，选取了不同的模型读取方式
 
+## conda 适配
+使用conda管理环境并启动
+```bash
+conda create -n sd-webui python=3.11
+conda activate sd-webui
+
+pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu121
+pip install -r requirements.txt
+
+bash webui_conda.sh
+```
+`scripts/webui_conda.sh`放在sd-webui项目的根目录下。
+
+为了使用 stable diffusion 3，你需要在huggingface下载
+```
+stable-diffusion-3-medium
+sd-vae
+t5-v1_1-xxl
+```
+
 如有问题欢迎联系3031864345@qq.com
